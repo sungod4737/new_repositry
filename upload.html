@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Video | Hometube</title>
+    <meta name="description" content="Upload and organize your videos on Hometube.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="upload.css">
+</head>
+
+<body>
+
+    <!-- HEADER: PRESERVED FROM index.html -->
+    <header class="main-header">
+        <div class="header-left">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-controls="sidebar" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <a href="home.html" class="brand">
+                <span class="brand-icon">
+                    <i class="bi bi-house-play-fill"></i>
+                </span>
+                <span class="brand-name">Home<span>tube</span></span>
+            </a>
+        </div>
+
+        <form class="search-form" id="searchForm" role="search">
+            <input type="search" id="searchInput" placeholder="Search videos, channels..." aria-label="Search videos and channels">
+
+            <button type="submit" aria-label="Search">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+
+        <div class="header-actions">
+            <a href="upload.html" class="upload-button" aria-current="page">
+                <i class="bi bi-cloud-arrow-up-fill"></i>
+                <span>Upload</span>
+            </a>
+
+            <a href="index.html" class="profile-button" aria-label="Your account">
+                <i class="bi bi-person-circle"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- PAGE LAYOUT -->
+    <div class="app-layout">
+
+        <!-- SIDEBAR: PRESERVED FROM index.html -->
+        <aside class="sidebar" id="sidebar">
+
+            <nav class="sidebar-nav" aria-label="Main navigation">
+
+                <a href="home.html" class="nav-link">
+                    <i class="bi bi-house-door-fill"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="favorites.html" class="nav-link">
+                    <i class="bi bi-heart-fill"></i>
+                    <span>Favorites</span>
+                </a>
+
+                <a href="history.html" class="nav-link">
+                    <i class="bi bi-clock-history"></i>
+                    <span>History</span>
+                </a>
+
+                <a href="upload.html" class="nav-link active" aria-current="page">
+                    <i class="bi bi-cloud-arrow-up-fill"></i>
+                    <span>Upload Video</span>
+                </a>
+
+                <a href="index.html" class="nav-link">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Account</span>
+                </a>
+
+                <a href="favorites.html" class="nav-link">
+                    <i class="bi bi-heart-fill"></i>
+                    <span>Favorites</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-note">
+                <i class="bi bi-camera-reels-fill"></i>
+                <h6>Your video home</h6>
+                <p>Discover something new, every day.</p>
+            </div>
+
+            <div class="sidebar-bottom">
+                <span class="status-dot"></span>
+                <span>Welcome to Hometube</span>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT: UPLOAD PAGE -->
+        <main class="main-content upload-main">
+
+            <section class="upload-heading">
+                <div>
+                    <p class="upload-eyebrow">
+                        <i class="bi bi-stars"></i> SHARE YOUR CREATIVITY
+                    </p>
+
+                    <h1>Upload a video</h1>
+
+                    <p>Share something interesting with your Hometube collection.</p>
+                </div>
+
+                <div class="upload-heading-icon">
+                    <i class="bi bi-cloud-arrow-up-fill"></i>
+                </div>
+            </section>
+
+            <form id="uploadForm" class="upload-form">
+
+                <!-- VIDEO FILE -->
+                <section class="upload-section">
+                    <h2><i class="bi bi-film"></i> Video file</h2>
+                    <p class="section-description">
+                        Select the video you want to add.
+                    </p>
+
+                    <label for="videoFile" class="upload-dropzone" id="videoDropzone">
+                        <i class="bi bi-cloud-arrow-up"></i>
+                        <strong id="videoFileLabel">Choose a video file</strong>
+                        <span>Click to browse your computer</span>
+                        <small>Supported formats depend on your browser.</small>
+                    </label>
+
+                    <input type="file" id="videoFile" name="videoFile" accept="video/*" required hidden>
+
+                    <div id="videoPreviewContainer" class="video-preview-container" hidden>
+                        <video id="videoPreview" controls playsinline></video>
+
+                        <button type="button" id="removeVideoButton" class="remove-file-button">
+                            <i class="bi bi-trash"></i> Remove video
+                        </button>
+                    </div>
+                </section>
+
+                <!-- VIDEO DETAILS -->
+                <section class="upload-section">
+                    <h2><i class="bi bi-card-text"></i> Video information</h2>
+                    <p class="section-description">
+                        Give your video a title and tell viewers about it.
+                    </p>
+
+                    <div class="form-field">
+                        <label for="videoTitle">Video title *</label>
+                        <input type="text" id="videoTitle" name="videoTitle" maxlength="100" placeholder="Enter your video title" required>
+                        <small>Maximum 100 characters.</small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="videoDescription">Description</label>
+                        <textarea id="videoDescription" name="videoDescription" rows="5" maxlength="2000" placeholder="What is your video about?"></textarea>
+                        <small>Maximum 2,000 characters.</small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="videoCategory">Category *</label>
+                        <select id="videoCategory" name="videoCategory" required>
+                            <option value="">Choose a category</option>
+                            <option value="Music">Music</option>
+                            <option value="Gaming">Gaming</option>
+                            <option value="Education">Education</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Lifestyle">Lifestyle</option>
+                            <option value="Science">Science</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- THUMBNAIL -->
+                <section class="upload-section">
+                    <h2><i class="bi bi-image"></i> Thumbnail</h2>
+                    <p class="section-description">
+                        Choose a picture to represent your video. This is optional.
+                    </p>
+
+                    <label for="thumbnailFile" class="thumbnail-dropzone">
+                        <img id="thumbnailPreview" alt="Thumbnail preview" hidden>
+
+                        <span id="thumbnailPlaceholder">
+                            <i class="bi bi-image"></i>
+                            <strong>Choose a thumbnail</strong>
+                            <small>JPG, PNG, or WebP</small>
+                        </span>
+                    </label>
+
+                    <input type="file" id="thumbnailFile" name="thumbnailFile" accept="image/jpeg,image/png,image/webp" hidden>
+
+                    <button type="button" id="removeThumbnailButton" class="remove-file-button" hidden>
+                        <i class="bi bi-trash"></i> Remove thumbnail
+                    </button>
+                </section>
+
+                <div id="uploadMessage" class="upload-message" role="status" aria-live="polite"></div>
+
+                <div class="upload-form-actions">
+                    <a href="index.html" class="cancel-upload-button">Cancel</a>
+
+                    <button type="submit" id="publishButton" class="publish-button">
+                        <i class="bi bi-cloud-arrow-up-fill"></i>
+                        Publish video
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- FOOTER: PRESERVED FROM index.html -->
+            <footer class="main-footer">
+
+                <div class="footer-top">
+
+                    <div class="footer-brand">
+                        <a href="index.html" class="brand footer-logo">
+                            <span class="brand-icon">
+                                <i class="bi bi-house-play-fill"></i>
+                            </span>
+                            <span class="brand-name">
+                                Home<span>tube</span>
+                            </span>
+                        </a>
+
+                        <p>
+                            A little inspiration, a lot of discovery. Welcome home to your videos.
+                        </p>
+                    </div>
+
+                    <div class="footer-links">
+                        <h6>Explore</h6>
+                        <a href="index.html">Home</a>
+                        <a href="favorites.html">Favourites</a>
+                        <a href="history.html">Watch History</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h6>Your Hometube</h6>
+                        <a href="upload.html">Upload Video</a>
+                        <a href="account.html">Account Settings</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h6>Information</h6>
+                        <a href="#about">About Hometube</a>
+                        <a href="#privacy">Privacy Information</a>
+                        <a href="#terms">Terms of Use</a>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom">
+                    <p>
+                        &copy; <span id="currentYear"></span> Hometube. Made for discovering and sharing videos.
+                    </p>
+
+                    <p class="local-storage-note">
+                        <i class="bi bi-hdd"></i> Videos uploaded here are stored in this browser.
+                    </p>
+                </div>
+
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="home.js"></script>
+    <script src="upload.js"></script>
+
+</body>
+
+</html>

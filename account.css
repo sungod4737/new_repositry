@@ -1,0 +1,145 @@
+:root {
+    --mustard: #C9A227;
+    --soft-mustard: #E4CB76;
+    --sage: #A8B5A0;
+    --forest: #234B36;
+    --deep-forest: #173527;
+    --white: #FFFFFF;
+    --cream: #F7F4E8;
+    --charcoal: #292D2A;
+    --light-grey: #E8E8E2;
+    --muted: #737970;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: Arial, sans-serif;
+}
+
+.account-header {
+    min-height: 76px;
+    padding: 16px 5%;
+    background: var(--deep-forest);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    color: var(--white);
+    font-size: 26px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.brand span {
+    color: var(--mustard);
+}
+
+.back-link {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--soft-mustard);
+}
+
+.account-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 16px;
+}
+
+.account-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 35px;
+    background: var(--white);
+    border: 1px solid var(--light-grey);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(35, 75, 54, 0.10);
+}
+
+.profile-icon {
+    text-align: center;
+    color: var(--forest);
+    font-size: 70px;
+}
+
+.account-card h1 {
+    margin-top: 12px;
+    color: var(--forest);
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.account-details p {
+    padding: 14px 0;
+    margin: 0;
+    border-bottom: 1px solid var(--light-grey);
+    overflow-wrap: anywhere;
+}
+
+.account-details strong,
+.account-details span {
+    display: block;
+}
+
+.account-details strong {
+    margin-bottom: 5px;
+    color: var(--forest);
+}
+
+.signout-button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    background: var(--forest);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.signout-button:hover {
+    background: var(--deep-forest);
+}
+
+.signout-button:focus-visible,
+.back-link:focus-visible,
+.brand:focus-visible {
+    outline: 3px solid var(--mustard);
+    outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+    .account-header {
+        padding: 14px 18px;
+    }
+    .brand {
+        font-size: 23px;
+    }
+    .account-container {
+        padding: 25px 12px;
+    }
+    .account-card {
+        padding: 24px 18px;
+    }
+}

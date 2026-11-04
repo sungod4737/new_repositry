@@ -1,0 +1,276 @@
+/* ========================================
+   HOMETUBE - LOGIN / CREATE ACCOUNT
+   Matches the original Hometube theme
+======================================== */
+
+:root {
+    --mustard: #C9A227;
+    --soft-mustard: #E4CB76;
+    --sage: #A8B5A0;
+    --forest: #234B36;
+    --deep-forest: #173527;
+    --white: #FFFFFF;
+    --cream: #F7F4E8;
+    --charcoal: #292D2A;
+    --light-grey: #E8E8E2;
+    --muted: #737970;
+    --radius: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Header */
+
+.signin-header {
+    height: 76px;
+    padding: 0 28px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.brand {
+    color: var(--forest);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand span {
+    color: var(--mustard);
+}
+
+.home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    background: var(--soft-mustard);
+    color: var(--deep-forest);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+
+.home-link:hover {
+    background: var(--mustard);
+}
+
+
+/* Main layout */
+
+.signin-container {
+    min-height: calc(100vh - 76px);
+    padding: 45px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Form card */
+
+.signin-card {
+    width: 100%;
+    max-width: 460px;
+    padding: 38px;
+    background: var(--white);
+    border: 1px solid var(--light-grey);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 35px rgba(35, 75, 54, 0.09);
+}
+
+
+/* Profile icon */
+
+.profile-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: var(--forest);
+    color: var(--soft-mustard);
+    font-size: 32px;
+}
+
+
+/* Headings */
+
+.signin-card h1 {
+    text-align: center;
+    color: var(--forest);
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+
+/* Form */
+
+#loginForm,
+#createAccountForm {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--forest);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-group input {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 15px;
+    border: 1px solid var(--light-grey);
+    border-radius: 10px;
+    background: #FAFAF7;
+    color: var(--charcoal);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #92978F;
+}
+
+.form-group input:focus {
+    border-color: var(--forest);
+    box-shadow: 0 0 0 3px rgba(35, 75, 54, 0.12);
+    background: var(--white);
+}
+
+
+/* Main button */
+
+#loginForm button,
+#createAccountForm button {
+    width: 100%;
+    min-height: 49px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 12px;
+    background: var(--forest);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#loginForm button:hover,
+#createAccountForm button:hover {
+    background: var(--deep-forest);
+    transform: translateY(-1px);
+}
+
+
+/* Messages */
+
+.message {
+    margin: 10px 0;
+    color: #B42318;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.message.success {
+    color: var(--forest);
+}
+
+
+/* Login / account links */
+
+.account-switch {
+    margin-top: 24px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.account-switch a,
+.back-link {
+    color: var(--forest);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.account-switch a:hover,
+.back-link:hover {
+    color: var(--mustard);
+    text-decoration: underline;
+}
+
+.back-link {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    font-size: 14px;
+}
+
+
+/* Mobile responsiveness */
+
+@media (max-width: 500px) {
+    .signin-header {
+        height: 68px;
+        padding: 0 16px;
+    }
+    .brand {
+        font-size: 22px;
+    }
+    .home-link {
+        padding: 10px 13px;
+        font-size: 13px;
+    }
+    .signin-container {
+        min-height: calc(100vh - 68px);
+        padding: 25px 14px;
+    }
+    .signin-card {
+        padding: 27px 21px;
+    }
+    .signin-card h1 {
+        font-size: 26px;
+    }
+}
