@@ -10,13 +10,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="history.css">
 </head>
 
 <body>
     <!-- Header -->
-    <header class="top-header">
+    <!-- <header class="top-header">
         <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar" aria-expanded="false">
             <i class="bi bi-list"></i>
         </button>
@@ -43,13 +43,53 @@
                 <i class="bi bi-person-circle"></i>
             </a>
         </div>
+    </header> -->
+    <header class="main-header">
+        <div class="header-left">
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-controls="sidebar" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <a href="index.html" class="brand">
+                <span class="brand-icon">
+                    <i class="bi bi-house-play-fill">H</i>
+                </span>
+                <span class="brand-name">Home<span>tube</span></span>
+            </a>
+
+        </div>
+
+        <form class="search-form" id="searchForm" role="search">
+            <input type="search" id="searchInput" placeholder="Search videos, channels..." aria-label="Search videos and channels">
+
+            <button type="submit" aria-label="Search">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+
+        <div class="header-actions">
+
+            <a href="upload.html" class="upload-button">
+                <i class="bi bi-cloud-arrow-up-fill"></i>
+                <span>Upload</span>
+            </a>
+
+
+            <a href="index.html" class="profile-link" aria-label="My Account" title="My Account">
+                <i class="bi bi-person-circle"></i>
+            </a>
+
+
+        </div>
     </header>
+
 
     <div class="page-layout">
         <!-- Sidebar -->
-        <aside class="sidebar" id="sidebar">
+        <!-- <aside class="sidebar" id="sidebar">
             <nav class="sidebar-nav">
-                <a href="home.html" class="nav-link">
+                <a href="index.html" class="nav-link">
                     <i class="bi bi-house-door"></i>
                     <span>Home</span>
                 </a>
@@ -68,17 +108,61 @@
                     <i class="bi bi-cloud-arrow-up"></i>
                     <span>Upload Video</span>
                 </a>
-
-                <a href="index.html" class="nav-link">
-                    <i class="bi bi-person-circle"></i>
-                    <span>Account</span>
-                </a>
             </nav>
 
             <div class="sidebar-bottom">
                 <p>HomeTube</p>
                 <small>Your videos, your world.</small>
             </div>
+        </aside> -->
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <nav class="sidebar-nav" aria-label="Main navigation">
+
+                <a href="index.html" class="nav-link">
+                    <i class="bi bi-house-door-fill"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="favorites.html" class="nav-link">
+                    <i class="bi bi-heart-fill"></i>
+                    <span>Favorites</span>
+                </a>
+
+                <a href="history.html" class="nav-link active">
+                    <i class="bi bi-clock-history"></i>
+                    <span>History</span>
+                </a>
+
+                <a href="upload.html" class="nav-link">
+                    <i class="bi bi-cloud-arrow-up-fill"></i>
+                    <span>Upload Video</span>
+                </a>
+
+                <!-- <a href="index.html" class="nav-link">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Account</span>
+                </a>
+                <a href="favorites.html" class="nav-link">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Favorites</span>
+                </a> -->
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-note">
+                <i class="bi bi-camera-reels-fill"></i>
+                <h6>Your video home</h6>
+                <p>Discover something new, every day.</p>
+            </div>
+
+            <div class="sidebar-bottom">
+                <span class="status-dot"></span>
+                <span>Welcome to Hometube</span>
+            </div>
+
         </aside>
 
         <!-- Main content -->
