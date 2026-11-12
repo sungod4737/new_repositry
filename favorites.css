@@ -1,9 +1,6 @@
-/* ========================================
-   HOMETUBE - FAVORITES PAGE
-   File: favorites.css
-======================================== */
-
-
+body{
+    overflow-x: hidden;
+}
 /* Main favorites layout */
 
 .favorites-main {
