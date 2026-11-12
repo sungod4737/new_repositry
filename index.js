@@ -859,25 +859,28 @@ function setupSidebar() {
     const menuToggle = document.getElementById("menuToggle");
     const sidebar = document.getElementById("sidebar");
 
-    if (menuToggle && sidebar) {
-        menuToggle.addEventListener("click", function() {
-            sidebar.classList.toggle("active");
-            sidebar.classList.toggle("show");
-        });
+    if (!menuToggle || !sidebar) {
+        return;
     }
 
-    document.addEventListener("click", function(event) {
-        if (!sidebar || !menuToggle) {
-            return;
-        }
+    menuToggle.addEventListener("click", function(event) {
+        event.stopPropagation();
 
+        sidebar.classList.toggle("open");
+
+        const isOpen = sidebar.classList.contains("open");
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    document.addEventListener("click", function(event) {
         if (
             window.innerWidth <= 768 &&
             !sidebar.contains(event.target) &&
             !menuToggle.contains(event.target)
         ) {
-            sidebar.classList.remove("active");
-            sidebar.classList.remove("show");
+            sidebar.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
         }
     });
 }
