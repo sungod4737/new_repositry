@@ -517,11 +517,11 @@ function createVideoCard(video) {
                     aria-pressed="${favourite}"
                     title="${favourite ? "Remove from favorites" : "Add to favorites"}"
                 >
-                    <i class="bi ${favourite ? "bi-heart-fill" : "bi-heart"}"></i>
+                    <i class="bi ${favourite ? "bi-heart-fill text-danger" : "bi-heart"}"></i>
                 </button>
 
                 <button
-                    class="watch-btn"
+                    class="watch-btn btn btn-outline-dark"
                     type="button"
                     data-action="play"
                     title="Watch video"
