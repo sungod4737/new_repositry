@@ -1,4 +1,4 @@
-/* .history-main {
+.history-main {
     display: block;
     flex: 1 1 0;
     min-width: 0;
@@ -7,10 +7,11 @@
     overflow-x: hidden;
     color: var(--charcoal, #292D2A);
     background: var(--cream, #F7F4E8);
-} */
+}
 
 
 /* Header layout */
+
 
 /* .menu-toggle {
     display: none;
@@ -22,6 +23,11 @@
 
 
 /* Main page and sidebar */
+.page-layout {
+    display: flex;
+    align-items: stretch;
+    min-height: calc(100vh - 70px);
+}
 
 
 /* .sidebar {
@@ -81,7 +87,7 @@
 
 /* History introduction */
 
-/* .history-header {
+.history-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,7 +96,7 @@
     padding: 28px;
     background: #fff;
     border-radius: 16px;
-} */
+}
 
 .history-heading-text {
     min-width: 0;
@@ -327,10 +333,10 @@
         width: 100%;
         padding: 18px 14px;
     }
-    /* .history-header {
+    .history-header {
         padding: 20px;
         gap: 12px;
-    } */
+    }
     .history-title {
         font-size: 1.5rem;
     }
@@ -354,9 +360,9 @@
 }
 
 @media (max-width: 380px) {
-    /* .history-header {
+    .history-header {
         padding: 16px;
-    } */
+    }
     .history-title {
         font-size: 1.3rem;
     }
